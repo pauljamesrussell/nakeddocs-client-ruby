@@ -18,8 +18,8 @@ end
 
 class Document < ActiveResource::Base
   self.site = "http://paulgrenyer.net/"
-  self.user = "chris"
-  self.password = "odell"
+  self.user = ENV['ND_USERNAME']
+  self.password = ENV['ND_PASSWORD']
   self.format = DocumentXMLFormatter.new
 
 	def self.collection_path(prefix_options = {}, query_options = nil)
